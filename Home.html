@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rehabilicare Trust - Home</title>
+<style type="text/css">
+.Menuas {
+	text-align: center;
+	padding: 2;
+}
+</style>
+<link href="Spry-UI-1.7/css/Menu/basic/SpryMenuBasic.css" rel="stylesheet" type="text/css" />
+<script src="Spry-UI-1.7/includes/SpryDOMUtils.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryDOMEffects.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryWidget.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryMenu.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/MenuBar2/SpryMenuBarKeyNavigationPlugin.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/MenuBar2/SpryMenuBarIEWorkaroundsPlugin.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryPanelSelector.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryPanelSet.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryFadingPanels.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SprySliderPanels.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryFilmStrip.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryImageLoader.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/SpryImageSlideShow.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/ImageSlideShow/SpryThumbnailFilmStripPlugin.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/ImageSlideShow/SpryTitleSliderPlugin.js" type="text/javascript"></script>
+<script src="Spry-UI-1.7/includes/plugins/ImageSlideShow/SpryPanAndZoomPlugin.js" type="text/javascript"></script>
+<script src="youtubePlayer.js" type="text/javascript"></script>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+// BeginOAWidget_Shared_2241022
+google.load("mootools", "1.2.1");
+// EndOAWidget_Shared_2241022
+</script>
+<script src="js/MenuMatic_0.68.3.js" type="text/javascript"></script>
+<style type="text/css">
+/* BeginOAWidget_Instance_2141544: #MenuBar */
+/* Settable values for skinning a Basic menu via presets. If presets are not sufficient, most skinning should be done in
+	these rules, with the exception of the images used for down or right pointing arrows, which are in the file SpryMenuBasic.css
+	
+	 These assume the following widget classes for menu layout (set in a preset)
+	.MenuBar - Applies to all menubars - default is horizontal bar, all submenus are vertical - 2nd level subs and beyond are pull-right.
+	.MenuBarVertical - vertical main bar; all submenus are pull-right.
+	
+	You can also pass in extra classnames to set your desired top level menu bar layout. Normally, these are set by using a preset. 
+	They only apply to horizontal menu bars:
+		MenuBarLeftShrink - The menu bar will be horizontally 'shrinkwrapped' to be just large enough to hold its items, and left aligned
+		MenuBarRightShrink - Just like MenuBarLeftShrink, but right aligned
+		MenuBarFixedLeft - Fixed at a specified width set in the rule '.MenuBarFixedLeft', and left aligned.  
+		MenuBarFixedCentered -  - Fixed at a specified width set in the rule '.MenuBarFixedCentered', 
+						and centered in its parent container.
+		MenuBarFullwidth - Grows to fill its parent container width.
+ 
+	In general, all rules specified in this file are prefixed by #MenuBar so they only apply to instances of the widget inserted along
+	with the rules. This permits use of multiple MenuBarBasic widgets on the same page with different layouts. Because of IE6 limitations,
+	there are a few rules where this was not possible. Those rules are so noted in comments.
+	
+*/
+
+#MenuBar  {
+	background-color:transparent;	
+	font-family: Arial, Helvetica, sans-serif; /* Specify fonts on on MenuBar and subMenu MenuItemContainer, so MenuItemContainer,
+												MenuItem, and MenuItemLabel
+												at a given level all use same definition for ems.
+												Note that this means the size is also inherited to child submenus, 
+												so use caution in using relative sizes other than
+												100% on submenu fonts. */
+	font-weight: normal;
+	font-size: 16px;
+	font-style: normal;
+	padding:0;	
+	border-color: #ffffff #ffffff #ffffff #ffffff; 
+	border-width:0px;
+	border-style: none none none none;
+	alignment-adjust:middle;
+	
+}
+/* Caution: because ID+class selectors do not work properly in IE6, but we want to restrict these rules to just this
+widget instance, we have used string-concatenated classnames for our selectors for the layout type of the menubar 
+in this section. These have very low specificity, so be careful not to accidentally override them. */
+
+.MenuBar br { /* using just a class so it has same specificity as the ".MenuBarFixedCentered br" rule bleow */
+	display:none;
+}
+.MenuBarLeftShrink {
+	float: left; /* shrink to content, as well as float the MenuBar */
+	width: auto;
+}
+.MenuBarRightShrink {
+	float: right; /* shrink to content, as well as float the MenuBar */
+	width: auto;
+}
+.MenuBarFixedLeft {
+	float: left;
+	width: 80em;
+}
+.MenuBarFixedCentered {
+	float: none;
+	width: 80em;
+	margin-left:auto;
+	margin-right:auto;
+}
+.MenuBarFixedCentered br {
+	clear:both;
+	display:block;
+}
+.MenuBarFixedCentered .SubMenu br {
+	display:none;
+}
+.MenuBarFullwidth {
+	float: left;
+	width: 100%;
+}
+
+/* Top level menubar items - these actually apply to all items, and get overridden for 1st or successive level submenus */
+#MenuBar  .MenuItemContainer {
+	padding: 0px 0px 0px 0px; 
+	margin: 0; 	/* Zero out margin  on the item containers. The MenuItem is the active hover area.
+				For most items, we have to do top or bottom padding or borders only on the MenuItem 
+				or a child so we keep the entire submenu tiled with items.
+				Setting this to 0 avoids "dead spots" for hovering. */
+}
+#MenuBar  .MenuItem {
+	padding: 0px 24px 0px 0px; 
+	background-color:#cccccc;	
+	border-width:1px;
+	border-color: #cccccc #ffffff #cccccc #ffffff; 
+	border-style: none solid none solid;
+}
+#MenuBar  .MenuItemFirst {
+	border-style: none none none none;
+}
+#MenuBar .MenuItemLast {
+	border-style: none solid none none;
+}
+
+#MenuBar  .MenuItem  .MenuItemLabel{
+	text-align:center;
+	line-height:1.4em;
+	color:#333333;
+	background-color:#cccccc;
+	padding: 6px 15px 6px 39px;
+	width: 10em;
+	width:auto; 
+}
+.SpryIsIE6 #MenuBar  .MenuItem  .MenuItemLabel{
+	width:1em; /* Equivalent to min-width in modern browsers */
+}
+
+/* First level submenu items */
+#MenuBar .SubMenu  .MenuItem {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	font-style: normal;
+	background-color:#ffffff;
+	padding:0px 2px 0px 0px;
+	border-width:1px;
+	border-color: #cccccc #cccccc #cccccc #cccccc; 
+	/* Border styles are overriden by first and last items */
+	border-style: solid solid none solid;
+}
+#MenuBar  .SubMenu .MenuItemFirst {
+	border-style: solid solid none solid;
+}
+#MenuBar  .SubMenu .MenuItemFirst .MenuItemLabel{
+	padding-top: 6px; 
+}
+#MenuBar .SubMenu .MenuItemLast {
+	border-style: solid solid solid solid;
+}
+#MenuBar .SubMenu .MenuItemLast .MenuItemLabel{
+	padding-bottom: 6px; 
+}
+#MenuBar .SubMenu .MenuItem .MenuItemLabel{
+	text-align:left;
+	line-height:1em;	
+	background-color:#ffffff;
+	color:#333333;
+	padding: 6px 12px 6px 5px; 
+	width: 7em;
+	 
+}
+
+/* Hover states for containers, items and labels */
+#MenuBar .MenuItemHover {
+	background-color: #999999;
+	border-color: #cccccc #cccccc #cccccc #cccccc; 
+}
+
+#MenuBar .MenuItemWithSubMenu.MenuItemHover .MenuItemLabel{
+	background-color: #999999; /* consider exposing this prop separately*/
+	color: #000000;
+}
+#MenuBar .MenuItemHover .MenuItemLabel{
+	background-color: #999999;
+	color: #000000;
+}
+#MenuBar .SubMenu .MenuItemHover {
+	background-color: #cccccc; 
+	border-color: #cccccc #cccccc #cccccc #cccccc; 
+}
+
+#MenuBar .SubMenu .MenuItemHover .MenuItemLabel{
+	background-color: #cccccc; 
+	color: #333333;
+}
+/* Submenu properties -- First level of submenus */
+#MenuBar .SubMenuVisible {
+	background-color: #ffffff;
+	min-width:0%;  /* This keeps the menu from being skinnier than the parent MenuItemContainer - nice to have but not available on ie6 */
+	border-color: #ffffff #ffffff #ffffff #ffffff; 
+	border-width:0px;
+	border-style: none none none none;
+}
+#MenuBar.MenuBar .SubMenuVisible {/* For Horizontal menubar only */
+	top: 100%;	/* 100% is at the bottom of parent menuItemContainer */
+	left:0px; /* 'left' may need tuning depending upon borders or padding applied to menubar MenuItemContainer or MenuItem, 
+					and your personal taste.
+					0px will left align the dropdown with the content area of the MenuItemContainer. Assuming you keep the margins 0 
+					on MenuItemContainer and MenuItem on the parent
+					menubar, making this equal the sum of the MenuItemContainer & MenuItem padding-left will align 
+					the dropdown with the left of the menu item label.*/
+	z-index:10;
+}
+#MenuBar.MenuBarVertical .SubMenuVisible {
+	top: 0px;	
+	left:100%;
+	min-width:0px; /* Do not neeed to match width to parent MenuItemContainer - items will prevent total collapse */
+}
+/* Submenu properties -- Second level submenu and beyond - these are visible descendents of .MenuLevel1 */
+#MenuBar .MenuLevel1 .SubMenuVisible {
+	background-color: #ffffff;
+	min-width:0px; /* Do not neeed to match width to parent MenuItemContainer - items will prevent total collapse*/
+	top: 0px;	/* If desired, you can move this down a smidge to separate top item''s submenu from menubar - 
+				that is really only needed for submenu on first item of MenuLevel1, or you can make it negative to make submenu more
+				vertically 'centered' on its invoking item */
+	left:100%; /* If you want to shift the submenu left to partially cover its invoking item, you can add a margin-left with a 
+				negative value to this rule. Alternatively, if you use fixed-width items, you can change this left value
+				to use px or ems to get the offset you want. */
+}
+/* IE6 rules - you can delete these if you do not want to support IE6 */
+
+/* A note about multiple classes in IE6.
+ * Some of the rules above use multiple class names on an element for selection, such as "hover" (MenuItemHover) and "has a subMenu" (MenuItemWithSubMenu),
+ * giving the selector '.MenuItemWithSubMenu.MenuItemHover'.
+ * Unfortunately IE6 does not support using mutiple classnames in a selector for an element. For a selector such as '.foo.bar.baz', IE6 ignores
+ * all but the final classname (here, '.baz'), and sets the specificity accordingly, counting just one of those classs as significant. To get around this 
+ * problem, we use the plugin in SpryMenuBarIEWorkaroundsPlugin.js to generate compound classnames for IE6, such as 'MenuItemWithSubMenuHover'. 
+ * Since there are a lot of these needed, the plugin does not generate the extra classes for modern browsers, and we use the CSS2 style mutltiple class
+ * syntax for that. Since IE6 both applies rules where 
+ * it should not, and gets the specificity wrong too, we have to order rules carefully, so the rule misapplied in IE6 can be overridden. 
+ * So, we put the multiple class rule first. IE6 will mistakenly apply this rule.  We follow this with the single-class rule that it would 
+ * mistakenly override, making sure the  misinterpreted IE6 specificity is the same as the single-class selector, so the latter wins. 
+ * We then create a copy of the multiple class rule, adding a '.SpryIsIE6' class as context, and making sure the specificity for
+ * the selector is high enough to beat the single-class rule in the "both classes match" case. We place the IE6 rule at the end of the 
+ * css style block to make it easy to delete if you want to drop IE6 support.
+ * If you decide you do not need IE6 support, you can get rid of these, as well as the inclusion of the SpryMenuBarIEWorkaroundsPlugin.js script.
+ * The 'SpryIsIE6' class is placed on the HTML element by  the script in SpryMenuBarIEWorkaroundsPlugin.js if the browser is Internet Explorer 6. This avoids the necessity of IE conditional comments for these rules.
+ */
+.SpryIsIE6 #MenuBar .MenuBarView .MenuItemWithSubMenuHover .MenuItemLabel /* IE6 selector  */{
+	background-color: #999999; /* consider exposing this prop separately*/
+	color: #000000;
+}
+.SpryIsIE6 #MenuBar .MenuBarView .SubMenu .MenuItemWithSubMenuHover .MenuItemLabel/* IE6 selector  */{
+	background-color: #cccccc; /* consider exposing this prop separately*/
+	color: #333333;
+}
+.SpryIsIE6 #MenuBar .SubMenu .SubMenu  /* IE6 selector  */{
+	margin-left: -0px; /* Compensates for at least part of an IE6 "double padding" version of the "double margin" bug */
+}
+
+	
+/* EndOAWidget_Instance_2141544 */
+</style>
+<link href="Spry-UI-1.7/css/ImageSlideShow/basicFS/basic_fs.css" rel="stylesheet" type="text/css" />
+<script type="text/xml">
+<!--
+<oa:widgets>
+  <oa:widget wid="2141544" binding="#MenuBar" />
+  <oa:widget wid="2141543" binding="#ImageSlideShow" />
+  <oa:widget wid="2310032" binding="#youtubePlayer" />
+  <oa:widget wid="2241022" binding="#nav" />
+  <oa:widget wid="2149022" binding="#OAWidget" />
+</oa:widgets>
+-->
+</script>
+<style type="text/css">
+/* BeginOAWidget_Instance_2141543: #ImageSlideShow */
+
+#ImageSlideShow {
+	width: 700px;
+	height: 300px;
+	margin: 24px 0px 0px 0px;
+	border: solid 1px #AAAAAA;
+	background-color: #FFFFFF;
+	
+	text-align: center;
+	vertical-align:top;
+	
+}
+
+#ImageSlideShow .ISSName {
+	top: -24px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #AAAAAA;
+}
+
+#ImageSlideShow .ISSSlideTitle {
+	top: -18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	overflow: hidden;
+	color: #AAAAAA;
+	text-transform: none;
+}
+
+#ImageSlideShow .ISSClip {
+	height: 200px;
+	margin: 0 10px 10px 10px;
+	border: solid 1px #AAAAAA;
+	background-color: #000000;
+}
+
+#ImageSlideShow .ISSControls {
+	top: 11px;
+	height: 432px;
+}
+
+#ImageSlideShow .FilmStrip {
+	height: 80px;
+	background-color: #CCCCCC;
+}
+
+#ImageSlideShow .FilmStripPreviousButton, #ImageSlideShow .FilmStripNextButton {
+	width: 25px;
+	height: 80px;
+}
+
+#ImageSlideShow .FilmStripTrack {
+	height: 80px;
+}
+
+#ImageSlideShow .FilmStripContainer {
+	height: 80px;
+}
+
+#ImageSlideShow .FilmStripPanel {
+	height: 80px;
+	padding-left: 10px;
+	margin-right: 0px;
+}
+
+#ImageSlideShow .FilmStripPanel .ISSSlideLink {
+	margin-top: 10px;
+	border: solid 1px #AAAAAA;
+	background-color: #FFFFFF;
+}
+
+#ImageSlideShow .FilmStripPanel .ISSSlideLinkRight {
+	border: solid 1px #AAAAAA;
+	width: 56px;
+	height: 47px;
+	margin: 4px 4px 4px 4px;
+}
+
+#ImageSlideShow .FilmStripCurrentPanel .ISSSlideLink {
+	background-color: #FFFFFF;
+	border-color: #FF0000;
+}
+
+#ImageSlideShow .FilmStripCurrentPanel .ISSSlideLinkRight {
+	border-color: #AAAAAA;
+}
+    
+/* EndOAWidget_Instance_2141543 */
+#contentBox
+{
+    display: block;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: Myriad Pro;
+}
+#contentBox h2
+{
+    display: block;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 20px;
+    border-radius: 5px;
+    background-color: #3385ff;
+    background-image: url(file:///C|/Users/HP/Documents/talha/_images/45StripBlue.png);
+    background-repeat: repeat-x;
+    color: #f0f0f0;
+    text-shadow: 1px 1px #0c56c6;
+}
+#contentBox p
+{
+    padding: 20px;
+    color: #333;
+    text-shadow: 1px 1px #FFF;
+}
+.contentBox a
+{
+    text-decoration: none;
+    color: inherit;
+}
+#player
+{
+    margin-left: 20px;
+}
+.contentBox ul
+{
+    padding: 0px 20px;
+    color: #333;
+    text-shadow: 1px 1px #FFF;
+}
+.contentBox h1
+{
+    color: #1C9AD7;
+    text-shadow: 1px 1px #FFF;
+    font-size: 42px;
+}
+#abc {
+	color: #CCC;
+}
+.abc {
+	color: #CCC;
+}
+.abc {
+	color: #000;
+	text-align: left;
+}
+.sad {
+	text-align: justify;
+}
+.sad {
+	text-align: justify;
+}
+.aa {
+	color: #CCC;
+}
+.aa {
+	text-align: justify;
+}
+.aa {
+	color: #000;
+}
+.da {
+	color: #CCC;
+}
+</style>
+<link href="css/MenuMatic.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+/* BeginOAWidget_Instance_2241022: #nav */
+
+
+/* ----[ LINKS ]----*/
+a:link{ 
+	color: #000000; 
+	font-weight: normal; 
+	font-family: inherit;
+	font-size: inherit; 
+	
+ }
+
+a:visited{ 
+	color: #000000; 
+	font-weight: normal; 
+	font-family: inherit;
+	font-size: inherit; 	
+}
+
+/* all menu links */
+#nav a, #subMenusContainer a{
+	text-decoration:none;
+	display:block;
+	padding: 10px 40px;
+	background-color:#fff ;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border: 0px solid inherit; 
+}
+
+/* Just main menu links --[for non-javascript users this applies to submenu links as well]*/
+#nav a{
+	margin:0;
+	float:left;	
+}
+
+/* Just sub menu links */
+#subMenusContainer a, #nav li li a{
+	text-align:left;
+}
+
+/* All menu links on hover or focus */
+#nav a:hover, #nav a:focus, #subMenusContainer a:hover, #subMenusContainer a:focus, #nav a.mainMenuParentBtnFocused, #subMenusContainer a.subMenuParentBtnFocused{
+	background-color: #0C3; 
+	color: #FFF; 
+}
+
+/* sub menu links on hover or focus */
+#subMenusContainer a:hover, 
+#subMenusContainer a:focus, 
+#nav a.mainMenuParentBtnFocused, 
+#subMenusContainer a.subMenuParentBtnFocused,
+#nav li a:hover,
+#nav li a:focus{
+	background-color:#53C80D; 
+	color: #FFF; 
+}
+
+/* ----[ OLs ULs, LIs, and DIVs ]----*/
+
+/* All ULs and OLs */
+#nav, #nav ul, #nav ol, #subMenusContainer ul, #subMenusContainer ol { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1em;
+}
+
+/* All submenu OLs and ULs */
+#nav ol, #nav ul, #subMenusContainer ul, #subMenusContainer ol {	
+	/*border around submenu goes here*/	 
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background:#fff;	
+	border:1px solid #C3D46A;
+	left:0;
+}
+
+/* List items in main menu --[for non-javascript users this applies to submenus as well]  */
+#nav li { 
+	/*great place to use a background image as a divider*/
+	display:block;
+	list-style:none;
+	position:relative;
+	float:left;
+}
+
+#subMenusContainer li{
+	list-style: none;
+}
+
+/* main menu ul or ol elment */
+#nav{
+	display: block;
+	position: absolute;
+	list-style: none;
+	margin: 0 0 0 0;
+	z-index: 5;
+	top: 199px;
+	display: block;
+	left: 284px;
+	width: 754px;
+}
+
+#subMenusContainer{	display:block; 	position:absolute;	top:0;	left:0;	width:100%;	height:0;	overflow:visible;	z-index:1000000000; }
+
+
+/* --------------------------[ The below is just for non-javscript users ]--------------------------*/
+#nav li li{	float:none; }
+
+#nav li li a{ /* Just submenu links*/	
+	position:relative;
+	float:none;
+}
+
+#nav li ul { /* second-level lists */
+	position: absolute;
+	width: 10em;
+	margin-left: -1000em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+	margin-top:2.2em;
+}
+
+/* third-and-above-level lists */
+#nav li ul ul { margin: -1em 0 0 -1000em; }
+#nav li:hover ul ul {	margin-left: -1000em; }
+
+ /* lists nested under hovered list items */
+#nav li:hover ul{	margin-left: 0; }
+#nav li li:hover ul {	margin-left: 10em; margin-top:-2.5em;}
+
+/* extra positioning rules for limited noscript keyboard accessibility */
+#nav li a:focus + ul {  margin-left: 0; margin-top:2.2em; }
+#nav li li a:focus + ul { left:0; margin-left: 1010em; margin-top:-2.2em;}
+#nav li li a:focus {left:0;  margin-left:1000em; width:10em;  margin-top:0;}
+#nav li li li a:focus {left:0; margin-left: 2010em; width: 10em;  margin-top:-1em;}
+#nav li:hover a:focus{ margin-left: 0; }
+#nav li li:hover a:focus + ul { margin-left: 10em; }
+
+/* EndOAWidget_Instance_2241022 */
+.ff {
+	color: #FFFFFF;
+}
+.ew {
+	color: #FFFFFF;
+	font-style: normal;
+}
+.ew .ff a {
+	color: #FFFFFF;
+}
+</style>
+<style type="text/css">
+
+body {
+	background-repeat: no-repeat;
+	
+	}
+</style>
+</head>
+
+<body background="backdrop.jpg">
+<table width="60%" border="0" align="center" cellpadding="8" height="200px">
+  <tr align="center" >
+  <td colspan="2" align="left"> <p><img src="mono.jpg" alt="" name="logo" width="150" height="150" id="logo" /> </p>
+   </tr>
+  <tr align="center" valign="top">
+    
+    <td height="16px" colspan="2" valign="top">
+      <ul id="nav">
+  <li> <a href="home.html"> Home</a></li>
+      <li> <a href="">About Us</a>      </li>
+      <li><a href="">Patients Gallery</a></li>
+      <li><a href="">Media Center</a></li>
+      <li><a href="">Contact Us</a></li>
+</ul>
+    <script type="text/javascript">
+// BeginOAWidget_Instance_2241022: #nav
+
+
+		window.addEvent('domready', function() {			
+			var myMenu = new MenuMatic({
+				id:"nav",
+				effect: "slide & fade",
+				duration: "600",
+				hideDelay: "1000",
+				matchWidthMode: "false",
+				orientation: "horizontal",
+				direction:{	x :  'right',	y: 'down' },
+				opacity: 95
+			});
+		});	
+
+// EndOAWidget_Instance_2241022
+      </script>
+    </td>
+    
+      
+
+  </tr>
+  </table>
+  <table align="center">
+      <tr  align="center" valign="top" >
+      <td  colspan="2" valign="top">
+    <ul id="ImageSlideShow" title="">
+      
+      <li><a href="images/Picture1.jpg" title=""><img src="images/Picture1.jpg" alt="Picture1.jpg" /></a> </li>
+   <li><a href="images/Picture2.jpg" title=""><img src="images/Picture2.jpg" alt="Picture2.jpg" /></a> </li>
+     <li><a href="images/Picture3.jpg" title=""><img src="images/Picture3.jpg" alt="Picture3.jpg" /></a> </li>
+       <li><a href="images/Picture4.jpg" title=""><img src="images/Picture4.jpg" alt="Picture4.jpg" /></a> </li>
+        <li><a href="images/Picture5.jpg" title=""><img src="images/Picture5.jpg" alt="Picture5.jpg" /></a></li>	
+    </ul>
+    <script type="text/javascript">
+// BeginOAWidget_Instance_2141543: #ImageSlideShow
+
+var ImageSlideShow = new Spry.Widget.ImageSlideShow("#ImageSlideShow", {
+	widgetID: "ImageSlideShow",
+	widgetClass: "BasicSlideShowFS",
+	injectionType: "replace",
+	autoPlay: true,
+	displayInterval: 5000,
+	transitionDuration: 3000,
+	componentOrder: ["name", "title", "view", "controls", "links"],
+	sliceMap: { BasicSlideShowFS: "3slice", ISSSlideLink: "3slice" },
+	plugIns: [ Spry.Widget.ImageSlideShow.ThumbnailFilmStripPlugin, Spry.Widget.ImageSlideShow.TitleSliderPlugin, Spry.Widget.ImageSlideShow.PanAndZoomPlugin ],
+	TFSP: { pageIncrement: 8, wraparound: false }
+});
+// EndOAWidget_Instance_2141543
+    </script></td>
+  </tr>
+  </table>
+<table width="70%" border="0" align="center" cellpadding="8">
+<tr>
+<td colspan="6" valign="bottom"><p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p><img src="bar1.png" alt="" name="Tag1" width="400" height="50" id="Tag1" /></p>
+</tr>
+  <tr>
+  <td width="50%" valign="top" colspan="3">As president of Rehabilicare Trust,I am proud to have this opportunity to share my thoughts and ideas.
+      The Rehabilicare is now entering its 5th year in serving the residents of Rawalpindi islamabad and also from the whole pakistan in which included the remote areas of anterior punjab ,Sind and even from gilgit particularly those who are considered underserved and neglected.<br />
+    Man is born to serve his fellow man. RehabiliCare Trust is working for the uplift of humanity. It has been observed that 4 out of 10 persons are suffering with some disability. RehabilicareTrust is one of its kind aiming to provide quality treatment at a minimal cost. It is indeed a matter of great pleasure and honor for me to be the president of an organization like RehabiliCare Trust, where the patients are treated with utmost care and attention and best possible treatment is provided to them despite of cast, colour and creed. </td>
+    
+    <td width="50%" align = "center" valign="bottom" colspan="3">
+ <video width="400" height="300" controls="controls" autoplay="autoplay" poster="Images/HCMI LOGO.jpg" >
+  <source src="" type="video/mp4" />
+ 
+  
+  Your browser does not support the video tag.
+</video>
+   
+   </td>
+ 
+  </tr>
+  <tr>
+  <td colspan="3">
+    <img src="bar2.png" alt="" name="bar2" width="300" height="50" id="bar2" /></td>
+  <td colspan="3"><img name="" src="bar3.png" width="300" height="50" alt="" />
+  </td>
+  </tr>
+  <tr>
+  <td width="50%" valign = "top" colspan="3"><p class="aa"> Establishment of the Health care center, education, food, shelter, special education school for special people. State of art Rehabilitation Center for physically and mentally impaired people, without the discrimination as to Sex,Color, Religion ,Sect ,Caste, or Country and free from all sort of Political Motives. </p>
+    <h2 class="aa">&nbsp;</h2>
+<br /></td>  
+     <td width="50%" Valign = "top" align = "center" colspan="3"><p class="abc">Life is a gift from the creator, sometimes Almighty Allah for the sake of our understanding and creating a sense of thankfulness we see people around us who are not gifted with all those things which are imperative to lead a normal life. Such happenings are either incidental or by birth. In such situations the choice is our own either let these special people become a burden for their own self and for those around them or help them lead a life close to normal. </p></td>
+  
+  </tr>  
+</table>
+<table background="foot.png" width="100%"  height="100Px" border="0" align="center" cellpadding="8">
+<tr  align="center"> 
+  <td width="80%" align="center" valign="middle">
+  <a href="home.html" STYLE="TEXT-DECORATION: NONE" > <span class="ff"><span class="ew">Home  </span></span></a> &nbsp;&nbsp;&nbsp;
+  <span class="ew"><span class="ff"><a href="About Us.html" class="ff" STYLE="TEXT-DECORATION: NONE" > About Us</a> &nbsp;&nbsp;&nbsp;   
+  <a href="Patient Gallery.html" STYLE="TEXT-DECORATION: NONE" > Patients Gallery</a>&nbsp;&nbsp;&nbsp;
+  <a href="Publication Media.html" STYLE="TEXT-DECORATION: NONE" >Publication Media</a>&nbsp;&nbsp;&nbsp;
+  <a href="Contact Us.html" STYLE="TEXT-DECORATION: NONE" >Contact Us</a></span></span><span class="ff"><a href="Contact Us.html"></a></span>
+   </td>
+ 
+  </tr>
+</table>
+
+</body>
+</html>
